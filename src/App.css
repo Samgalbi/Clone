@@ -1,38 +1,474 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header Styles */
+.header {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+}
+
+.currency-selector select {
+  background: transparent;
+  color: #fff;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #F1C40F;
+  color: #222;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.search-bar {
+  display: flex;
+  width: 40%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #F1C40F;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.cart a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.main-menu {
+  background-color: #222;
+  border-radius: 4px;
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-menu li a {
+  display: block;
+  color: #fff;
+  padding: 12px 18px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.main-menu li a:hover {
+  background-color: #444;
+}
+
+/* Main Slider Styles */
+.main-slider {
+  margin-bottom: 30px;
+}
+
+.main-slider .carousel .control-arrow {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.comer-slide {
+  background: linear-gradient(to right, #4e7dce, #1e3c72);
+}
+
+.slide-content {
+  display: flex;
+  height: 100%;
+  color: #fff;
+  padding: 30px;
+}
+
+.slide-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.slide-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.details-btn {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.product-images {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.product-stands {
+  flex: 1;
+}
+
+.product-panels {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.panel {
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.temperature {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Section Styles */
+.section {
+  margin-bottom: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: #F1C40F;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.section-footer {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.see-all {
+  color: #666;
+  font-weight: 500;
+}
+
+.see-all:hover {
+  color: #F1C40F;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  height: 200px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-logo {
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.product-logo img {
+  height: 100%;
+}
+
+.product-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.current-price {
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Brands Section Styles */
+.brands-section {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.brands-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand-item {
+  flex: 1;
+  min-width: 120px;
+  max-width: 150px;
+  text-align: center;
+  padding: 15px;
+}
+
+.brand-item img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0);
+}
+
+/* Newsletter Section Styles */
+.newsletter-section {
+  background-color: #fff;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+.newsletter-container {
+  text-align: center;
+}
+
+.newsletter-text {
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.subscribe-btn {
+  background-color: #F1C40F;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.newsletter-disclaimer {
+  font-size: 12px;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #F1C40F;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #F1C40F;
 }

@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import MainSlider from './components/MainSlider';
+import PromoProducts from './components/PromoProducts';
+import PopularProducts from './components/PopularProducts';
+import NewProducts from './components/NewProducts';
+import BestSellers from './components/BestSellers';
+import Brands from './components/Brands';
+import Newsletter from './components/NewsLetter';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Navbar />
+      <main>
+        <MainSlider />
+        <div className="container">
+          <PromoProducts />
+          <PopularProducts />
+          <NewProducts />
+          <BestSellers />
+        </div>
+        <Brands />
+        <Newsletter />
+      </main>
+      <Footer />
     </div>
   );
 }
